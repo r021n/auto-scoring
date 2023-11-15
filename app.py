@@ -14,7 +14,7 @@ model = load_model('model.h5')
 vectorizer = joblib.load('vectorizer.pkl')
 
 # Misalkan kita memiliki teks baru
-teks_baru = ['contoh kalimat yang ingin diprediksi']
+teks_baru = [str(input("masukkan jawabanmu : \n"))]
 
 # Ubah teks baru menjadi vektor
 teks_baru_vec = vectorizer.transform(teks_baru)
@@ -27,4 +27,4 @@ kelas_prediksi = np.argmax(prediksi)
 
 # Jika model Anda adalah model scikit-learn, prediksi sudah dalam bentuk kelas, jadi Anda tidak perlu menggunakan np.argmax
 
-print(f'Prediksi untuk teks baru: {prediksi}')
+print(f'nilaimu adalah: {kelas_prediksi}')
